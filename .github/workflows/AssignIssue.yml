@@ -1,16 +1,15 @@
-name: Label New Issues as "Assign Issue"
+name: Assign Issue
 on:
   issues:
     types: [opened]
 permissions:
-  issues: write  
+  issues: write
 jobs:
   assign_issue:
     runs-on: ubuntu-latest
     steps:
-    - name: Assign Issue
-      uses: actions-ecosystem/action-assign@v2
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        assignees: JoshMowrey
-
+      - name: Assign Issue
+        uses: actions-ecosystem/action-add-assignees@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          assignees: joshmowrey
