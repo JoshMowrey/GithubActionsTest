@@ -1,4 +1,4 @@
-name: Assign Issue
+name: Label New Issues as "Assign Issue"
 on:
   issues:
     types: [opened]
@@ -12,4 +12,5 @@ jobs:
       uses: actions-ecosystem/action-assign@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        assignees:  JoshMowrey
+        assignees: JoshMowrey
+
